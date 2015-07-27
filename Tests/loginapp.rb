@@ -11,6 +11,6 @@ describe 'Login' do
 
   it '- Login to app', :smoke do
 
-    @login.login_app(Login::USERS[0])
+    @login.login_app
   end
 end

@@ -1,8 +1,8 @@
 [caps]
-platformName = “android”
-platformVersion = “5.0”
-deviceName = “Nexus 7”
-app = "./app/DreamTrip2.app"
+platformName = "android"
+platformVersion = "5.0"
+deviceName = "Nexus 7"
+app = "./app/DreamTripsAndroid.apk"
 
 [appium_lib]
 sauce_username = false

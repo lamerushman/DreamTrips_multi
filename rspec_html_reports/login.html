@@ -290,7 +290,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Duration Summary</div>
         <div class="panel-body">
-          <span class="pull-right label label-primary">Finished in 33.40982</span>
+          <span class="pull-right label label-primary">Finished in 132.46846</span>
 
           <div id="duration_summary">Loading chart...</div>
         </div>
@@ -328,17 +328,17 @@
 
                       <div class="panel panel-danger">
                         <div class="panel-heading">
-                          <h3 class="panel-title">Selenium::WebDriver::Error::JavascriptError</h3>
+                          <h3 class="panel-title">Selenium::WebDriver::Error::TimeOutError</h3>
                         </div>
                         <div class="panel-body">
-                          <pre class="highlight"><code><span class="n">target</span><span class="p">.</span><span class="nf">frontMostApp</span><span class="p">().</span><span class="nf">mainWindow</span><span class="p">().</span><span class="nf">textFields</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="n">could</span> <span class="n">not</span> <span class="n">be</span> <span class="n">tapped</span></code></pre>
+                          <pre class="highlight"><code><span class="n">timed</span> <span class="n">out</span> <span class="n">after</span> <span class="mi">8</span> <span class="n">seconds</span> <span class="p">(</span><span class="no">Could</span> <span class="n">not</span> <span class="n">find</span> <span class="n">an</span> <span class="n">element</span> <span class="n">using</span> <span class="n">supplied</span> <span class="n">strategy</span><span class="o">.</span> <span class="p">)</span></code></pre>
 
                           <h5>/Users/rushman/RubymineProjects/DreamTrips_multi/tests/loginapp.rb:14:in `block (2 levels) in <top (required)>'</h5>
                           <div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">13
 14
 15
 16</pre></td><td class="code"><pre>
-<span class="o">---&gt;</span>    <span class="vi">@login</span><span class="p">.</span><span class="nf">login_app</span><span class="p">(</span><span class="no">Login</span><span class="o">::</span><span class="no">USERS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="o">---&gt;</span>    <span class="vi">@login</span><span class="p">.</span><span class="nf">login_app</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></td></tr></tbody></table>
@@ -350,7 +350,7 @@
                   
                 </div>
               </td>
-              <td>16.70491</td>
+              <td>66.23423</td>
               <td><span class="label label-danger">failed</span></td>
             </tr>
         
@@ -379,7 +379,7 @@
     myChart.draw();
 
     var myChart2 = new JSChart('duration_summary', 'line', '');
-    myChart2.setDataArray([[0, 16.70491], [1, 16.70491]]);
+    myChart2.setDataArray([[0, 66.23423], [1, 66.23423]]);
     myChart2.setSize(400, 300);
     myChart2.setLineColor('#0070B8');
     myChart2.setTitle('');
