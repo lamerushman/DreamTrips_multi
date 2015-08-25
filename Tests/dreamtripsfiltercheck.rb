@@ -16,9 +16,4 @@ describe 'Dreamtripscheckfilter' do
     @login.login_app
   end
 
-  it '- Set regions off and apply', :smoke do
-    @dreamtrips.click(FILTER)
-    uncheck_themes
-    apply_filters
-  end
-end
+

@@ -4,7 +4,7 @@ class CommonScreen
     @driver = driver
   end
 
-  def wait_until(seconds=8)
+  def wait_until(seconds=20)
     Selenium::WebDriver::Wait.new(:timeout => seconds).until { yield }
   end
 
@@ -60,8 +60,6 @@ class CommonScreen
     @driver.background_app
   end
 
-  # def login_app
-  #   find(:xpath,  //UIAApplication[1]/UIAWindow[1]/UIATextField[1]/UIATextField[1])
-  # end
+
 
 end # CommonScreen

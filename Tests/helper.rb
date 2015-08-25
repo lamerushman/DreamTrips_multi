@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+#require 'allure-rspec'
 
 Bundler.require(:test_frameworks)
 
@@ -20,5 +21,6 @@ RSpec.configure do |config|
   config.after(:each) do
     @driver.driver_quit
   end
+
 
 end

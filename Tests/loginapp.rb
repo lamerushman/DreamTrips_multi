@@ -12,5 +12,6 @@ describe 'Login' do
   it '- Login to app', :smoke do
 
     @login.login_app
+
   end
 end

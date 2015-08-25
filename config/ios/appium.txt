@@ -2,7 +2,7 @@
 platformName = "ios"
 platformVersion = "7.1"
 deviceName = "iPhone Simulator"
-app = "./app/DreamTrip2.app"
+app = "/Users/rushman/RubymineProjects/DreamTrips_multi/app/DreamTrip3.app"
 
 [appium_lib]
 sauce_username = false
