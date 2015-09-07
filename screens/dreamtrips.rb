@@ -53,14 +53,10 @@ class Dreamtrips<CommonScreen
   #            :ANDROID => {}}
   TRIPBUCKET = {:IOS => {uiautomation: '.collectionViews()[0].cells()[0].buttons()[0]'}}
 
-  #navigation panel
 
 
-  BUCKETLIST = {:IOS => {uiautomation: '.tabBars()[0].buttons()[3]'}}
 
-  def join_bl
-    click(BUCKETLIST)
-  end
+
 #  Filter methods
 
   def open_filter

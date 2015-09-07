@@ -3,7 +3,7 @@ require_relative '../screens/common'
 require_relative '../screens/login'
 require_relative '../screens/dreamtrips'
 
-describe 'Dreamtripscheckfilter' do
+describe 'DTfilter' do
 
   before(:each) do
     @screen = CommonScreen.new(@driver)
@@ -14,6 +14,8 @@ describe 'Dreamtripscheckfilter' do
   it '- Login to app', :smoke do
 
     @login.login_app
+  end
+
   end
 
 

@@ -25,7 +25,9 @@ class Login < CommonScreen
     begin
       do_login
       @login_attemps_count = @login_attemps_count + 1
-    rescue Selenium::WebDriver::Error::NoSuchElementError
+    # rescue Selenium::WebDriver::Error::NoSuchElementError
+    rescue Exception => e
+      p e.message
       if @login_attemps_count < 3
         do_login
       else
