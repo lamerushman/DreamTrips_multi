@@ -71,7 +71,7 @@ class BucketList < CommonScreen
   end
 
   def bl_cell_getter(number)
-    cell = { :IOS => { uiautomation: ".collectionViews()[0].cells()[#{number}]."} }
+    { :IOS => { uiautomation: ".collectionViews()[0].cells()[#{number}]"} }
   end
 
 
