@@ -1,7 +1,7 @@
 [caps]
 platformName = "ios"
-platformVersion = "7.1"
-deviceName = "iPhone Simulator"
+platformVersion = "8.4"
+deviceName = "iPhone 5s"
 app = "/Users/rushman/RubymineProjects/DreamTrips_multi/app/DreamTrip3.app"
 
 [appium_lib]

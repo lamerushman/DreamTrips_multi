@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem "rake"
+
+gem 'pry-byebug'
+
 group :test_frameworks do
   gem 'appium_lib', '~> 7.0.0'
   gem 'rspec', '~> 3.0.0'

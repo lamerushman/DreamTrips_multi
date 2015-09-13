@@ -15,13 +15,19 @@ describe 'Bucket List functionality' do
     @bucket_list = BucketList.new(@driver)
   end
 
-  it 'Empty BL checking' do
+  # it 'Empty BL checking',:smoke do
+  #   @login.login_app
+  #   @navpan.join_bl
+  #   expect(@screen.is_displayed?(BucketList::BUCKETLISTTITTLE)).to be_truthy
+  #   @bucket_list.ui_elements do |ui_element|
+  #     expect(@bucket_list.empty_bli_displayed?(ui_element)).to be_truthy
+  #   end
+  # end
+
+  it 'Add new BL item using top panel',:smoke do
     @login.login_app
     @navpan.join_bl
-    #expect(@screen.is_displayed?(BucketList::BUCKETLISTTITTLE)).to be_truthy
-    #@bucketlist.ui_elements do |ui_element|
-    #  expect(@bucketlist.empty_bli_displayed?(ui_element)).to be_truthy
-    #end
+    # @bucket_list.additem
+    @bucket_list.enter_bl_details
   end
-
 end

@@ -11,7 +11,7 @@ describe 'DTfilter' do
     @dreamtrips = Dreamtrips.new(@driver)
   end
 
-  it '- Login to app', :smoke do
+  it '- Login to app' do
 
     @login.login_app
   end

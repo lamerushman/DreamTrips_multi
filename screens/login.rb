@@ -21,32 +21,39 @@ class Login < CommonScreen
     @login_attemps_count = 0
   end
 
-  def login_app
-    begin
-      do_login
-      @login_attemps_count = @login_attemps_count + 1
-    # rescue Selenium::WebDriver::Error::NoSuchElementError
-    rescue Exception => e
-      p e.message
-      if @login_attemps_count < 3
-        do_login
-      else
-        throw "unable to login"
-      end
-    end
-  end
-
-  def do_login
-    if @login_attemps_count == 0
-      enter("64908459", USER_ID)
-      enter("64908459", PASSWORD)
+    def login_app
+      enter("64909941", USER_ID)
+      enter("64909941", PASSWORD)
       click(CHECKTERMS)
+      click(LOGINBTN)
     end
-    click(LOGINBTN)
-    @login_attemps_count += 1
-    find(Dreamtrips::DTITLE)
-
-  end
+  #
+  # def login_app
+  #   begin
+  #     do_login
+  #     @login_attemps_count = @login_attemps_count + 1
+  #   # rescue Selenium::WebDriver::Error::NoSuchElementError
+  #   rescue Exception => e
+  #     p e.message
+  #     if @login_attemps_count < 3
+  #       do_login
+  #     else
+  #       throw "unable to login"
+  #     end
+  #   end
+  # end
+  #
+  # def do_login
+  #   if @login_attemps_count == 0
+  #     enter("64909941", USER_ID)
+  #     enter("64909941", PASSWORD)
+  #     click(CHECKTERMS)
+  #   end
+  #   click(LOGINBTN)
+  #   @login_attemps_count += 1
+  #   find(Dreamtrips::DTITLE)
+  #
+  # end
 
   def accept_alert
     first_button.click

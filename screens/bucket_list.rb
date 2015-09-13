@@ -1,6 +1,3 @@
-require 'appium_lib'
-require 'rubygems'
-
 class BucketList < CommonScreen
 
 
@@ -31,6 +28,11 @@ class BucketList < CommonScreen
   CREATEBLCLOSE = {:IOS => {uiautomation: '.navigationBars()[0].buttons()[1]'},
                   :ANDROID => {id: '.1'}}
 
+
+  #===== BL DETAILS PATHS======
+
+
+
   #BL LIST NAVIGATION
 
   # self.cells = [
@@ -41,6 +43,7 @@ class BucketList < CommonScreen
   # ]
 
   # Navigate between tabs of BL on IPHONE, could be different on different devices
+
 
 
   def tap_activities_ios
@@ -66,12 +69,12 @@ class BucketList < CommonScreen
     text_include?("additem_defaultmethod",bl_cell_getter(number))
   end
 
-  def enter_bl_details(number)
-    click(bl_cell_getter(number))
+  def enter_bl_details
+    click(bl_cell_getter)
   end
 
-  def bl_cell_getter(number)
-    { :IOS => { uiautomation: ".collectionViews()[0].cells()[#{number}]"} }
+  def bl_cell_getter
+    { :IOS => { uiautomation: '.collectionViews()[0].cells()[0].textFields()[0]'} }
   end
 
 

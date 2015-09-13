@@ -9,7 +9,7 @@ describe 'Login' do
     @login = Login.new(@driver)
   end
 
-  it '- Login to app', :smoke do
+  it '- Login to app' do
 
     @login.login_app
 

@@ -12,7 +12,7 @@ describe 'Check Test Trips' do
     @dreamtrips = Dreamtrips.new(@driver)
   end
 
-  it 'Check trip on main page', :smoke do
+  it 'Check trip on main page' do
 
     @login.login_app
     expect(@dreamtrips.check_trip_value(Dreamtrips::TRIPTITTLE)).to eq(@dreamtrips.triptexteq("title"))
@@ -21,7 +21,5 @@ describe 'Check Test Trips' do
   end
 end
 
-  it 'Check trip details', :smoke
 
-   @login.login_app
 
