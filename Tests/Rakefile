@@ -1,0 +1,26 @@
+require 'rspec/core/rake_task'
+
+ENV['APPIUM_HOME'] ||= '/Users/rushman/appium'
+$APPIUM_LOAD_TIME = 2
+
+RSpec::Core::RakeTask.new(:android, :tag, :device_type) do |task, task_args|
+	launch_appium "ANDROID", task_args[:device_type]
+	task.pattern = Dir.glob("Tests/*.rb")
+	task.rspec_opts = "-t #{task_args[:tag]}"
+	task.verbose = true
+end
+
+RSpec::Core::RakeTask.new(:ios, :tag, :device_type) do |task, task_args|
+	launch_appium "IOS", task_args[:device_type]
+	task.pattern = Dir.glob("Tests/*.rb")
+	task.rspec_opts = "-t #{task_args[:tag]}"
+	task.verbose = true
+end
+
+def launch_appium(platform, device_type)
+	ENV['PLATFORM'] = platform
+	ENV['DEVICE_TYPE'] = device_type
+	appium = spawn("node #{ENV['APPIUM_HOME']}/.")
+	Process.detach(appium)
+	sleep $APPIUM_LOAD_TIME
+end
