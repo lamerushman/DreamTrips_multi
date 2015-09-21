@@ -1,0 +1,314 @@
+require_relative "common.rb"
+require_relative "../lib/elements.rb"
+
+class BucketList < CommonScreen
+
+  #===========BUCKETLIST LIST ELEMENTS ===============
+
+  static_text :bucketlist_title do
+    ios :uiautomation => '.navigationBars()[0].staticTexts()[0]'
+    android :id => '.1'
+  end
+
+  static_text :noitems_text do
+    ios :uiautomation => '.staticTexts()[0]'
+    android :id => '.1'
+  end
+
+  static_text :add_item_text do
+    ios :uiautomation => '.staticTexts()[1]'
+  end
+
+  button :add_bucketlist_empty do
+    ios :uiautomation => '.buttons()[0]'
+    android :id => '.1'
+  end
+
+  button :add_bucketlist_popular do
+    ios :uiautomation => '.staticTexts()[0]'
+    android :id => '.1'
+  end
+
+  button :add_bucketitem_top do
+    ios :uiautomation => '.navigationBars()[0].buttons()[2]'
+    android :id => '.1'
+  end
+
+  button :add_bucketlist_filter do
+    ios :uiautomation => '.navigationBars()[0].buttons()[3]'
+    android :id => '.1'
+  end
+
+  text_field :new_bucketitem_title do
+    ios :uiautomation => '.textFields()[0]'
+  end
+
+  button :done_new_bucketitem do
+    ios :uiautomation => '.navigationBars()[0].buttons()[2]'
+    android :id => '.1'
+  end
+
+  button :cancel_new_bucketitem do
+    ios :uiautomation => '.navigationBars()[0].buttons()[0]'
+  end
+
+
+  #===== BL DETAILS PATHS======
+
+  static_text :bucketitem_details_title do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[0]'
+    android :id => "1."
+  end
+
+  static_text :bucketitem_category_title do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[1]'
+    android :id => '.1'
+  end
+
+  static_text :bucketitem_location_title do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[2]'
+    android :id => '.1'
+  end
+
+  static_text :bucketitem_details_date do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[3]'
+    android :id => '.1'
+  end
+
+  static_text :bucketitem_details_people do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[10]'
+    android :id => '.1'
+  end
+
+  static_text :bucketitem_details_tag do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[12]'
+    android :id => '.1'
+  end
+
+  static_text :bucketitem_details_description do
+    ios :uiautomation => '.scrollViews()[0].staticTexts()[13]'
+    android :id => '.1'
+  end
+
+  button :bucketitem_back_to_list do
+    ios :uiautomation => '.scrollViews()[0].buttons()[1]'
+    android :id => '.1'
+  end
+
+  button :bucketitem_markasdone do
+    ios :uiautomation => '.scrollViews()[0].buttons()[2]'
+    android :id => '.1'
+  end
+
+  button :bucketitem_details_delete_item do
+    ios :uiautomation => '.segmentedControls()[0].buttons()[0]'
+    android :xpath => '.1'
+  end
+
+  button :bucketitem_details_edit_item do
+    ios :uiautomation => '.segmentedControls()[0].buttons()[1]'
+    android :xpath => '.1'
+  end
+
+  button :bucketitem_details_share_item do
+    ios :uiautomation => '.segmentedControls()[0].buttons()[3]'
+    android :xpath => '.1'
+  end
+
+  #====================Delete BL Alert
+
+  static_text :alert_title do
+    ios :uiautomation => '.staticTexts()[0]'
+  end
+
+  static_text :alert_text do
+    ios :uiautomation => '.staticTexts()[1]'
+  end
+
+  button :delete_item_accept do
+    ios :uiautomation => '.buttons()[0]'
+  end
+
+  button :cancel_deleting do
+    ios :uiautomation => '.buttons()[1]'
+  end
+
+  #===================Edit BL screen
+
+
+  button :back_to_details do
+    ios :uiautomation => '.navigationBars()[0].buttons()[0]'
+  end
+
+  button :save_changes do
+    ios :uiautomation => '.navigationBars()[0].buttons()[2]'
+  end
+
+  button :mark_as_done_edit do
+    ios :uiautomation => '.scrollViews()[0].buttons()[2]'
+  end
+
+  text_field :bucketitem_title_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[0]'
+  end
+
+  text_field :bucketitem_description_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[1]'
+  end
+
+  text_field :bucketitem_people_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[4]'
+  end
+
+  text_field :bucketitem_tag_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[5]'
+  end
+
+  text_field :bucketitem_category_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[2]'
+  end
+
+  text_field :bucketitem_date_edit do
+    ios :uiautomation => '.scrollViews()[0].textFields()[3]'
+  end
+
+  #  =============Categories  and dates lists ========
+
+
+  list :categories do
+    ios :uiautomation => ".tableViews()[0]"
+  end
+
+  dates_bucketlist = [
+      "tomorrow",
+      "this week",
+      "next week",
+      "this month",
+      "next month",
+      "in six month",
+      "this year",
+      "next year",
+      "someday"
+  ]
+
+  categories_bucketlist = [
+      "Adventure",
+      "Arts&Culture",
+      "Cruises",
+      "Culinary",
+      "Fun in the sun",
+      "Health",
+      "Historical",
+      "Lakes and Rivers",
+      "Mountains",
+      "Music and Events",
+      "Points of Interests",
+      "Religious",
+      "Sports & Wellness",
+      "Theme parks",
+      "Tourism"
+  ]
+
+
+  list :dates do
+    ios :uiautomation => ".tableViews()[0]"
+  end
+
+  list :items do
+    ios :uiautomation => ".collectionViews()[0]"
+  end
+
+  def edit_bucketlist
+
+  end
+
+  def tap_activities_ios
+    @driver.execute_script 'mobile: tap', :x => 150, :y => 64
+  end
+
+  def tap_locations_ios
+    @driver.execute_script 'mobile: tap', :x => 0, :y => 64
+  end
+
+  def tap_dining_ios
+    @driver.execute_script 'mobile: tap', :x => 276, :y => 64
+  end
+
+  def tap_somewhere
+    @driver.execute_script 'mobile: tap', :x => 300, :y => 300
+  end
+
+  def add_bucketlist_item (title)
+    self.add_bucketitem_top.click
+    self.new_bucketitem_title.enter(title)
+    self.done_new_bucketitem.click
+    self.helper.wait(5)
+    self.cancel_new_bucketitem.click
+  end
+
+  def clear_list
+    while items.item_getter(0).displayed?
+      items.item_getter(0).click
+      bucketitem_details_delete_item.click
+      delete_item_accept.click
+      self.helper.wait(2)
+    end
+  end
+
+
+  def fill_trip_details(item, array)
+    items.select_cell(0)
+    bucketitem_details_edit_item.click
+    fill_data_from_hash(array, item)
+  end
+
+  def fill_data_from_hash(array, item)
+    bucketitem_title_edit.clear
+    bucketitem_title_edit.enter(array[item][:title])
+    bucketitem_description_edit.enter(array[item][:description])
+    bucketitem_people_edit.enter(array[item][:people])
+    bucketitem_tag_edit.enter(array[item][:tag])
+    save_changes.click
+    get_data_on_details
+  end
+
+  def get_data_on_details
+    bucketitem = Hash.new
+    bucketitem[:title] = bucketitem_details_title.get_element_value
+    bucketitem[:description] = bucketitem_details_description.get_element_value
+    bucketitem[:people] = bucketitem_details_people.get_element_value
+    bucketitem[:tag] = bucketitem_details_tag.get_element_value
+
+    bucketitem
+  end
+
+  def get_bucketitem_title
+    items.bucketlist_getter(0).text
+  end
+
+  def enter_bucketitem_details(number)
+    self.items.select_cell(number)
+  end
+
+  def edit_bucketitem_details
+    bucketitem_details_edit_item.click
+  end
+
+  def ui_elements
+    yield NOITEMSTEXT
+    yield ADDITEMTEXT
+    yield ADDITEMARROW
+    yield ADDBLIEMPTY
+    yield ADDBLIPOPEMPTY
+  end
+
+  def empty_bli_displayed?(ui_element)
+    is_displayed? ui_element
+  end
+
+  def bli_from_empty
+    click(ADDBLIEMPTY)
+    send
+  end
+
+end
